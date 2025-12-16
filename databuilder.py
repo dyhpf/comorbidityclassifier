@@ -59,7 +59,7 @@ Y = Y.loc[Y.index.intersection(discharge_best.index)]
 data = Y.join(discharge_best[["subject_id", "text"]], how="inner").reset_index().rename(columns={"index":"hadm_id"})
 
 # Optional: remove near-empty / templated notes
-MIN_CHARS = 500
+MIN_CHARS = 250
 data = data[data["text"].str.len() >= MIN_CHARS].reset_index(drop=True)
 
 print("Usable admissions:", len(data))
