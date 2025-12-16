@@ -6,7 +6,7 @@ A comprehensive LLM-based system for extracting comorbidity information from cli
 
 - **`gccomorbidity.py`** - Single-level classifier with topic management
 - **`multiagentgc.py`** - Multi-agent hierarchical classifier using LangGraph
-- **`labelbuilder.py`** - helper to load MIMIC IV data according to ICD 9/10 mapping
+- **`databuilder.py`** - helper to load MIMIC IV data according to ICD 9/10 mapping
 
 ## 🏥 Overview
 
@@ -35,7 +35,7 @@ This framework addresses the challenge of accurately identifying complex comorbi
 - **Contradiction resolution** between parent-child classifications
 - **Early judgment filtering** for efficiency
 - **Context forwarding** between hierarchy levels
-### Admission-Level Labels per Category (`labelbuilder.py`) 
+### Admission-Level Labels per Category (`databuilder.py`) 
 - **Admission-centric labeling** assigns binary labels per comorbidity category at the hospital admission level (e.g., hadm_id), aligning with how diagnoses and multimorbidity are documented in routine care.
 - **ICD-derived weak reference labels (MIMIC-IV):** constructs per-category labels from ICD-9-CM / ICD-10-CM diagnosis codes (via diagnoses_icd) to support cross-institution experiments and data curation.
 - **Text-only inference compatibility:** labels are used for sampling and evaluation only; they are not provided to the LLM during inference, which operates solely on unstructured note text (e.g., discharge summaries).
