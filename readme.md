@@ -6,7 +6,7 @@ A comprehensive LLM-based system for extracting comorbidity information from cli
 
 - **`gccomorbidity.py`** - Single-level classifier with topic management
 - **`multiagentgc.py`** - Multi-agent hierarchical classifier using LangGraph
-- ** labelbuilder.py ** - helper to load MIMIC IV data according to ICD 9/10 mapping
+- **`labelbuilder.py`** - helper to load MIMIC IV data according to ICD 9/10 mapping
 
 ## 🏥 Overview
 
